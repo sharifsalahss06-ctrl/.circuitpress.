@@ -222,7 +222,7 @@
     line-height: 1.5;
   }
 
-  /* Reviews Section */
+  /* Reviews Section (restored layout) */
   .reviews {
     background: rgba(255,255,255,0.05);
     padding: 50px 20px;
@@ -236,8 +236,8 @@
 
   .review-container {
     display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 10px;
   }
@@ -248,7 +248,7 @@
     border-radius: 10px;
     padding: 20px;
     min-width: 250px;
-    flex-shrink: 0;
+    max-width: 300px;
     box-shadow: 0 0 10px rgba(0,170,255,0.2);
   }
 
@@ -420,5 +420,7 @@ hamburger.addEventListener('click', () => {
 
 </body>
 </html>
+
+
 
 
