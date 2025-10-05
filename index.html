@@ -13,7 +13,7 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0a0a0a, #111827, #001f3f); /* nice blue gradient */
+    background: linear-gradient(135deg, #0a0a0a, #111827, #001f3f);
     color: #fff;
   }
 
@@ -113,6 +113,29 @@
     display: block;
   }
 
+  /* Login Button */
+  .login-btn {
+    background-color: #00aaff;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .login-btn:hover {
+    background-color: #0088cc;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .login-btn {
+      margin-left: 10px;
+    }
+  }
+
   /* Hero Section */
   .hero {
     text-align: center;
@@ -123,6 +146,22 @@
     font-size: 3rem;
     margin-bottom: 20px;
     color: #00aaff;
+  }
+
+  /* Glow Effect */
+  .glow {
+    animation: glow 1s ease-in-out infinite alternate;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #00aaff, 0 0 30px #00aaff, 0 0 40px #00aaff;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #00aaff, 0 0 30px #0088cc, 0 0 40px #0088cc;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #00ccff, 0 0 40px #00ccff, 0 0 50px #00ccff;
+    }
   }
 
   .hero p {
@@ -181,6 +220,58 @@
   .card p {
     font-size: 1rem;
     line-height: 1.5;
+  }
+
+  /* Reviews Section */
+  .reviews {
+    background: rgba(255,255,255,0.05);
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .reviews h2 {
+    color: #00aaff;
+    margin-bottom: 20px;
+  }
+
+  .review-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .review {
+    background: #111827;
+    border: 1px solid #00aaff;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 250px;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(0,170,255,0.2);
+  }
+
+  .review p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .add-review-btn {
+    background: #00aaff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .add-review-btn:hover {
+    background: #0088cc;
+    transform: scale(1.05);
   }
 
   /* Footer */
@@ -265,11 +356,13 @@
       </div>
     </li>
   </ul>
+
+  <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
 </nav>
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Welcome to Circuit Press</h1>
+  <h1 class="glow">Welcome to Circuit Press</h1>
   <p>
     Your student-led hub for technology, cybersecurity, and digital innovation. Learn coding tips, explore new tech trends, and stay informed about cybersecurity best practices.
   </p>
@@ -292,6 +385,18 @@
   </div>
 </section>
 
+<!-- Reviews Section -->
+<section class="reviews">
+  <h2>Student Reviews</h2>
+  <div class="review-container">
+    <div class="review"><p>"Honestly, I didn’t expect to like cybersecurity this much. This site helped me understand basic terms without feeling overwhelmed." — Sarah, 1st Year</p></div>
+    <div class="review"><p>"I was confused about how firewalls actually work until I read one of the blogs here. Simple and clear explanations!" — Daniel, CyberSec Student</p></div>
+    <div class="review"><p>"Love how everything here feels made by students for students. The design looks cool and easy to read." — Priya, Freshman</p></div>
+    <div class="review"><p>"Just started my first year in cybersecurity and Circuit Press has been a big help for my class projects." — Leo, Year 1</p></div>
+  </div>
+  <button class="add-review-btn" onclick="alert('Review feature coming soon!')">Add a Review</button>
+</section>
+
 <!-- Footer -->
 <footer>
   <p>&copy; 2025 Circuit Press | All Rights Reserved</p>
@@ -309,9 +414,11 @@ const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('show');
-  hamburger.classList.toggle('active'); // optional animation for lines
+  hamburger.classList.toggle('active');
 });
 </script>
 
 </body>
 </html>
+
+
