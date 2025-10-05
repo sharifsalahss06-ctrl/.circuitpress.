@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Circuit Press</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #111827, #000000);
+      color: #f5f5f5;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #000;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .logo span {
+      color: #00aaff;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li {
+      position: relative;
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #00aaff;
+      font-weight: bold;
+      padding: 5px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #fff;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background-color: #222;
+      min-width: 150px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    nav ul li:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Blog Section */
+    .blog-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .blog-section h2 {
+      color: #00aaff;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #00aaff;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      text-align: left;
+      box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #00aaff;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      color: #00aaff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="images/logo.png" alt="Circuit Press Logo">
+      <span>Circuit Press</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li>
+        <a href="#">More ▾</a>
+        <div class="dropdown-content">
+          <a href="contact.html">Contact</a>
+          <a href="resources.html">Resources</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Blog Section -->
+  <section class="blog-section">
+    <h2>Latest Articles</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/article1.jpg" alt="AI in 2025">
+        <h3>AI in 2025</h3>
+        <p>Exploring the latest breakthroughs in artificial intelligence and how they shape our future.</p>
+        <a href="article-ai.html">Read More</a>
+      </div>
+      <div class="card">
+        <img src="images/article2.jpg" alt="Cybersecurity Trends">
+        <h3>Cybersecurity Trends</h3>
+        <p>Discover how digital threats are evolving and what you can do to stay protected online.</p>
+        <a href="article-cybersecurity.html">Read More</a>
+      </div>
+      <div class="card">
+        <img src="images/article3.jpg" alt="Tech for Students">
+        <h3>Tech for Students</h3>
+        <p>Top tools and platforms every tech student should know to boost productivity and learning.</p>
+        <a href="article-students.html">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Circuit Press | All Rights Reserved</p>
+    <div class="socials">
+      <a href="#">GitHub</a>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+

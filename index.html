@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circuit Press | Home</title>
+<style>
+  /* Global Styles */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a, #111827, #001f3f); /* nice blue gradient */
+    color: #fff;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* Navbar */
+  nav {
+    background-color: #000;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .logo span {
+    color: #00aaff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #00aaff;
+    margin: 4px 0;
+    transition: 0.3s;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul li {
+    position: relative;
+    margin-left: 20px;
+  }
+
+  nav ul li a {
+    color: #00aaff;
+    font-weight: bold;
+    padding: 5px;
+    transition: color 0.2s ease;
+  }
+
+  nav ul li a:hover {
+    color: #fff;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #222;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #00aaff;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+
+  nav ul li:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #00aaff;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: auto;
+  }
+
+  .hero a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #00aaff;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .hero a:hover {
+    background: #0088cc;
+    transform: scale(1.03);
+  }
+
+  /* Featured Section */
+  .featured {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .card {
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid #00aaff;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px;
+    flex: 1 1 250px;
+    box-shadow: 0 0 15px rgba(0,170,255,0.2);
+    transition: transform 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card h3 {
+    color: #00aaff;
+    margin-bottom: 15px;
+  }
+
+  .card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  footer p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .socials a {
+    margin: 0 10px;
+    color: #00aaff;
+  }
+
+  .socials a:hover {
+    color: #fff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      display: none;
+      width: 100%;
+      background-color: #111;
+      position: absolute;
+      top: 60px;
+      left: 0;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    nav ul.show {
+      display: flex;
+    }
+
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+      background-color: #111;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo">
+    <img src="images/logo.png" alt="Circuit Press Logo">
+    <span>Circuit Press</span>
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <ul id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="about.html">About</a></li>
+    <li>
+      <a href="#">More ▾</a>
+      <div class="dropdown-content">
+        <a href="contact.html">Contact</a>
+        <a href="resources.html">Resources</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Welcome to Circuit Press</h1>
+  <p>
+    Your student-led hub for technology, cybersecurity, and digital innovation. Learn coding tips, explore new tech trends, and stay informed about cybersecurity best practices.
+  </p>
+  <a href="blog.html">Explore Our Blog</a>
+</section>
+
+<!-- Featured Section -->
+<section class="featured">
+  <div class="card">
+    <h3>Latest Tutorials</h3>
+    <p>Step-by-step guides on coding, security tips, and tech tools for students and beginners.</p>
+  </div>
+  <div class="card">
+    <h3>Cybersecurity Insights</h3>
+    <p>Stay updated with the latest threats, security tips, and how to protect your digital world.</p>
+  </div>
+  <div class="card">
+    <h3>Tech Trends</h3>
+    <p>Discover emerging technologies, trends, and innovations shaping the future of digital life.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Circuit Press | All Rights Reserved</p>
+  <div class="socials">
+    <a href="#">GitHub</a>
+    <a href="#">Twitter</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+
+<!-- JS for Hamburger -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  hamburger.classList.toggle('active'); // optional animation for lines
+});
+</script>
+
+</body>
+</html>

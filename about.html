@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Circuit Press</title>
+<style>
+  /* Global Styles */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a, #111827);
+    color: #f5f5f5;
+  }
+
+  /* Navbar */
+  nav {
+    background-color: #000;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .logo span {
+    color: #00aaff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  /* Hamburger menu button - hidden on desktop */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #00aaff;
+    margin: 4px 0;
+    transition: 0.3s;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul li {
+    position: relative;
+    margin-left: 20px; /* slight unevenness is intentional human touch */
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #00aaff;
+    font-weight: bold;
+    padding: 5px;
+    transition: color 0.2s ease;
+  }
+
+  nav ul li a:hover {
+    color: #fff;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #222;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #00aaff;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+
+  nav ul li:hover .dropdown-content {
+    display: block;
+  }
+
+  /* About Section */
+  .about-section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .about-card {
+    background-color: #1a1a1a;
+    border: 1px solid #00aaff;
+    border-radius: 10px;
+    padding: 35px; /* human-adjusted padding */
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.2);
+    transition: transform 0.2s ease;
+  }
+
+  .about-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .about-card h2 {
+    color: #00aaff;
+    margin-bottom: 15px;
+  }
+
+  .about-card p {
+    font-size: 1.12rem;
+    line-height: 1.55;
+  }
+
+  /* Footer */
+  footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  footer p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .socials a {
+    margin: 0 10px;
+    color: #00aaff;
+    text-decoration: none;
+  }
+
+  .socials a:hover {
+    color: #fff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      display: none; /* hide menu initially */
+      width: 100%;
+      background-color: #111;
+      position: absolute;
+      top: 60px;
+      left: 0;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    nav ul.show {
+      display: flex; /* show menu when active */
+    }
+
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+      background-color: #111;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo">
+    <img src="images/logo.png" alt="Circuit Press Logo">
+    <span>Circuit Press</span>
+  </div>
+
+  <!-- Hamburger menu button -->
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <ul id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="about.html">About</a></li>
+    <li>
+      <a href="#">More ▾</a>
+      <div class="dropdown-content">
+        <a href="contact.html">Contact</a>
+        <a href="resources.html">Resources</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- About Section -->
+<section class="about-section">
+  <div class="about-card">
+    <h2>About Circuit Press</h2>
+    <!-- Main content about the blog. Might add author bios later -->
+    <p>
+      Circuit Press is a student-led tech blog exploring the fast-moving world of technology, cybersecurity, and digital innovation. Built by a first-year cybersecurity student, this platform shares tutorials, insights, and commentary on coding, tech trends, and online security.
+      <br><br>
+      The blog emphasizes clear, approachable content and clean design. Whether you're a fellow student or a tech enthusiast, Circuit Press provides a space to learn, experiment, and grow your skills.
+      <br><br>
+      Articles are written with care to make complex topics easier to understand. With a sleek dark theme and bold visuals, Circuit Press represents a modern, student-driven voice in tech education.
+      <!-- TODO: consider adding a small illustration or photo of author here later -->
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <!-- Footer links are placeholders for now, will update with real social links later -->
+  <p>&copy; 2025 Circuit Press | All Rights Reserved</p>
+  <div class="socials">
+    <a href="#">GitHub</a>
+    <a href="#">Twitter</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+
+<!-- Simple JS for Hamburger Menu -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  // animate hamburger lines
+  hamburger.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
+
+
