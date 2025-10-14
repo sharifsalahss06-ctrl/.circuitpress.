@@ -1,424 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Circuit Press | Home</title>
-<style>
-  /* Global Styles */
-  * {
-    box-sizing: border-box;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circuit Press | Home</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <style>
+    /* 
+      Author:Salah Al Din Sharif
+      Course: Web Dev / Cybersecurity Year 1
+      Notes: Built from scratch, trying to learn basic responsive layout :)
+    */
 
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0a0a0a, #111827, #001f3f);
-    color: #fff;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  /* Navbar */
-  nav {
-    background-color: #000;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo img {
-    height: 40px;
-    margin-right: 10px;
-  }
-
-  .logo span {
-    color: #00aaff;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-
-  .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #00aaff;
-    margin: 4px 0;
-    transition: 0.3s;
-  }
-
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  nav ul li {
-    position: relative;
-    margin-left: 20px;
-  }
-
-  nav ul li a {
-    color: #00aaff;
-    font-weight: bold;
-    padding: 5px;
-    transition: color 0.2s ease;
-  }
-
-  nav ul li a:hover {
-    color: #fff;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background-color: #222;
-    min-width: 150px;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
-    z-index: 1;
-  }
-
-  .dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: #00aaff;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #333;
-    color: #fff;
-  }
-
-  nav ul li:hover .dropdown-content {
-    display: block;
-  }
-
-  /* Login Button */
-  .login-btn {
-    background-color: #00aaff;
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-
-  .login-btn:hover {
-    background-color: #0088cc;
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 768px) {
-    .login-btn {
-      margin-left: 10px;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0b0b0b, #102030);
+      color: #eaeaea;
+      line-height: 1.5;
     }
-  }
 
-  /* Hero Section */
-  .hero {
-    text-align: center;
-    padding: 80px 20px;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #00aaff;
-  }
-
-  /* Glow Effect */
-  .glow {
-    animation: glow 1s ease-in-out infinite alternate;
-    color: #fff;
-    text-shadow: 0 0 10px #fff, 0 0 20px #00aaff, 0 0 30px #00aaff, 0 0 40px #00aaff;
-  }
-
-  @keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #00aaff, 0 0 30px #0088cc, 0 0 40px #0088cc;
+    a {
+      text-decoration: none;
     }
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #00ccff, 0 0 40px #00ccff, 0 0 50px #00ccff;
+
+    /* NAVBAR */
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      background: #000;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-  }
 
-  .hero p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: auto;
-  }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
 
-  .hero a {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 25px;
-    background: #00aaff;
-    color: #fff;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
+    .logo img {
+      height: 45px;
+      width: auto;
+      margin-right: 8px;
+    }
 
-  .hero a:hover {
-    background: #0088cc;
-    transform: scale(1.03);
-  }
+    .logo span {
+      color: #1e90ff;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
 
-  /* Featured Section */
-  .featured {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
-  }
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      flex: 1;
+    }
 
-  .card {
-    background-color: rgba(255,255,255,0.05);
-    border: 1px solid #00aaff;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 15px;
-    flex: 1 1 250px;
-    box-shadow: 0 0 15px rgba(0,170,255,0.2);
-    transition: transform 0.2s ease;
-  }
+    .nav-links a {
+      color: #1e90ff;
+      font-weight: bold;
+      padding: 5px;
+    }
 
-  .card:hover {
-    transform: translateY(-5px);
-  }
+    .nav-links a:hover {
+      color: #5ad7c0;
+    }
 
-  .card h3 {
-    color: #00aaff;
-    margin-bottom: 15px;
-  }
-
-  .card p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  /* Reviews Section (restored layout) */
-  .reviews {
-    background: rgba(255,255,255,0.05);
-    padding: 50px 20px;
-    text-align: center;
-  }
-
-  .reviews h2 {
-    color: #00aaff;
-    margin-bottom: 20px;
-  }
-
-  .review-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 10px;
-  }
-
-  .review {
-    background: #111827;
-    border: 1px solid #00aaff;
-    border-radius: 10px;
-    padding: 20px;
-    min-width: 250px;
-    max-width: 300px;
-    box-shadow: 0 0 10px rgba(0,170,255,0.2);
-  }
-
-  .review p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-
-  .add-review-btn {
-    background: #00aaff;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-top: 25px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-
-  .add-review-btn:hover {
-    background: #0088cc;
-    transform: scale(1.05);
-  }
-
-  /* Footer */
-  footer {
-    background-color: #000;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-  }
-
-  footer p {
-    margin: 5px 0;
-    font-size: 14px;
-  }
-
-  .socials a {
-    margin: 0 10px;
-    color: #00aaff;
-  }
-
-  .socials a:hover {
-    color: #fff;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
+    /* DROPDOWN MENU */
+    .dropdown {
       display: none;
-      width: 100%;
-      background-color: #111;
       position: absolute;
-      top: 60px;
+      top: 30px;
       left: 0;
+      background: #222;
+      border-radius: 6px;
+      min-width: 140px;
     }
 
-    nav ul li {
-      margin: 10px 0;
+    .dropdown a {
+      display: block;
+      padding: 8px 12px;
+      color: #1e90ff;
     }
 
-    .hamburger {
+    .dropdown a:hover {
+      background: #333;
+      color: #5ad7c0;
+    }
+
+    /* LOGIN BUTTON */
+    .login-btn {
+      background: #1e90ff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      background: #0b6cd4;
+    }
+
+    /* BURGER MENU */
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-btn div {
+      height: 3px;
+      width: 24px;
+      background: #1e90ff;
+      margin-bottom: 3px;
+    }
+
+    /* BANNER */
+    .banner {
+      text-align: center;
+      padding: 70px 15px 50px;
+    }
+
+    .banner h1 {
+      font-size: 2.6rem;
+      color: #1e90ff;
+      margin-bottom: 15px;
+    }
+
+    .banner p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      font-size: 1.1rem;
+    }
+
+    .banner a {
+      display: inline-block;
+      padding: 10px 22px;
+      background: #0b6cd4;
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .banner a:hover {
+      background: #5ad7c0;
+    }
+
+    /* TOPICS SECTION */
+    .topics {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 50px 15px;
     }
 
-    nav ul.show {
-      display: flex;
+    .topic {
+      flex: 1 1 250px;
+      background: rgba(255, 255, 255, 0.05);
+      margin: 12px;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #5ad7c0;
+      box-shadow: 0 0 10px rgba(90, 215, 192, 0.15);
+      transition: transform 0.2s;
     }
 
-    .dropdown-content {
-      position: static;
-      box-shadow: none;
-      background-color: #111;
+    .topic:hover {
+      transform: translateY(-3px);
     }
-  }
-</style>
+
+    .topic h3 {
+      color: #1e90ff;
+      margin-bottom: 8px;
+    }
+
+    /* REVIEWS SECTION */
+    .reviews {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 45px 15px;
+    }
+
+    .reviews h2 {
+      color: #1e90ff;
+      margin-bottom: 15px;
+    }
+
+    .review-card {
+      background: #111827;
+      padding: 18px;
+      border-radius: 8px;
+      border: 1px solid #5ad7c0;
+      max-width: 400px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .review-card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .add-review {
+      margin-top: 20px;
+      background: #0b6cd4;
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .add-review:hover {
+      background: #5ad7c0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      padding: 15px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .socials a {
+      margin: 0 8px;
+      color: #1e90ff;
+    }
+
+    .socials a:hover {
+      color: #5ad7c0;
+    }
+
+    /* SCROLL BUTTON */
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #1e90ff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* MOBILE VIEW */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: flex;
+      }
+
+      .dropdown {
+        position: static;
+        background: #111;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<!-- Navbar -->
-<nav>
-  <div class="logo">
-    <img src="images/logo.png" alt="Circuit Press Logo">
-  </div>
-
-  <div class="hamburger" id="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <ul id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="about.html">About</a></li>
-    <li>
-      <a href="#">More ▾</a>
-      <div class="dropdown-content">
-        <a href="contact.html">Contact</a>
-        <a href="resources.html">Resources</a>
-        <a href="faq.html">FAQ</a>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/logo.png" alt="Circuit Press Logo">
+        <span>Circuit Press</span>
       </div>
-    </li>
-  </ul>
 
-  <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
-</nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="#">More ▾</a>
+          <div class="dropdown">
+            <a href="contact.html">Contact</a>
+            <a href="resources.html">Resources</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+        </li>
+      </ul>
 
-<!-- Hero Section -->
-<section class="hero">
-  <h1>Welcome to Circuit Press</h1>
-  <p>
-    Your student-led hub for technology, cybersecurity, and digital innovation. Learn coding tips, explore new tech trends, and stay informed about cybersecurity best practices.
-  </p>
-  <a href="blog.html">Explore Our Blog</a>
-</section>
+      <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
 
-<!-- Featured Section -->
-<section class="featured">
-  <div class="card">
-    <h3>Latest Tutorials</h3>
-    <p>Step-by-step guides on coding, security tips, and tech tools for students and beginners.</p>
-  </div>
-  <div class="card">
-    <h3>Cybersecurity Insights</h3>
-    <p>Stay updated with the latest threats, security tips, and how to protect your digital world.</p>
-  </div>
-  <div class="card">
-    <h3>Tech Trends</h3>
-    <p>Discover emerging technologies, trends, and innovations shaping the future of digital life.</p>
-  </div>
-</section>
+      <div class="menu-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </nav>
 
-<!-- Reviews Section -->
-<section class="reviews">
-  <h2>Student Reviews</h2>
-  <div class="review-container">
-    <div class="review"><p>"Honestly, I didn’t expect to like cybersecurity this much. This site helped me understand basic terms without feeling overwhelmed." — Sarah, 1st Year</p></div>
-    <div class="review"><p>"I was confused about how firewalls actually work until I read one of the blogs here. Simple and clear explanations!" — Daniel, CyberSec Student</p></div>
-    <div class="review"><p>"Love how everything here feels made by students for students. The design looks cool and easy to read." — Priya, Freshman</p></div>
-    <div class="review"><p>"Just started my first year in cybersecurity and Circuit Press has been a big help for my class projects." — Leo, Year 1</p></div>
-  </div>
-  <button class="add-review-btn" onclick="alert('Please contact Circuit Press to add Review!')">Add a Review</button>
-</section>
+  <!-- BANNER -->
+  <section class="banner">
+    <h1>Welcome to Circuit Press</h1>
+    <p>We're a bunch of students curious about tech, coding, and cybersecurity. This site is where we post tutorials and experiments that actually helped us learn.</p>
+    <a href="blog.html">Check Out the Blog</a>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Circuit Press | All Rights Reserved</p>
-  <div class="socials">
-    <a href="#">GitHub</a>
-    <a href="#">Twitter</a>
-    <a href="#">LinkedIn</a>
-  </div>
-</footer>
+  <!-- TOPICS -->
+  <section class="topics">
+    <div class="topic">
+      <h3>Tutorials</h3>
+      <p>Quick how-tos and project notes written by students who just learned it themselves.</p>
+    </div>
+    <div class="topic">
+      <h3>Cybersecurity Basics</h3>
+      <p>Notes from our intro classes — stuff like encryption, phishing, and safe passwords.</p>
+    </div>
+    <div class="topic">
+      <h3>Tech Updates</h3>
+      <p>What’s new in the world of gadgets, code, and digital safety (and what we think of it).</p>
+    </div>
+  </section>
 
-<!-- JS for Hamburger -->
-<script>
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+  <!-- REVIEWS (Carousel Added) -->
+  <section class="reviews">
+    <h2>Student Comments</h2>
+    <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" id="carouselInner"></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <button class="add-review" id="addReviewBtn">Add a Comment</button>
+  </section>
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-  hamburger.classList.toggle('active');
-});
-</script>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Circuit Press | Made by Students</p>
+    <div class="socials">
+      <a href="#">GitHub</a>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
 
+  <button id="topBtn">↑</button>
+
+  <script>
+    // menu toggle for mobile
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // dropdown hover effect
+    const listItems = document.querySelectorAll('.nav-links li');
+    listItems.forEach(li => {
+      li.addEventListener('mouseenter', () => {
+        const dd = li.querySelector('.dropdown');
+        if (dd) dd.style.display = 'block';
+      });
+      li.addEventListener('mouseleave', () => {
+        const dd = li.querySelector('.dropdown');
+        if (dd) dd.style.display = 'none';
+      });
+    });
+
+    // scroll-to-top button
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        topBtn.style.display = 'block';
+      } else {
+        topBtn.style.display = 'none';
+      }
+    });
+
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // simple "reviews" (comments)
+    const reviews = [
+      { text: "Cool site! Helped me understand basic network stuff.", author: "Alex (Year 1)" },
+      { text: "The tutorials are short and not full of jargon — nice.", author: "Maya (Freshman)" },
+      { text: "Used one of the coding posts for my assignment, thanks!", author: "Jordan" }
+    ];
+
+    const carouselInner = document.getElementById('carouselInner');
+
+    function renderReviews() {
+      carouselInner.innerHTML = "";
+      reviews.forEach((r, index) => {
+        const div = document.createElement('div');
+        div.className = 'carousel-item' + (index === 0 ? ' active' : '');
+        div.innerHTML = `
+          <div class="review-card mx-auto">
+            <p>"${r.text}" — ${r.author}</p>
+          </div>`;
+        carouselInner.appendChild(div);
+      });
+    }
+
+    renderReviews();
+
+    // add new comment
+    document.getElementById('addReviewBtn').addEventListener('click', () => {
+      const text = prompt("Enter your comment:");
+      if (text && text.trim() !== "") {
+        reviews.unshift({ text: text.trim(), author: "Visitor" });
+        renderReviews();
+      }
+    });
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
