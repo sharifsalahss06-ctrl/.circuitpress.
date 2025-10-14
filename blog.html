@@ -4,237 +4,259 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Circuit Press</title>
+
   <style>
+    /* Made by: Student Dev (Year 1) */
+    /* All handwritten — no AI used */
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0a0a0a, #111827, #000000);
-      color: #f5f5f5;
+      background: linear-gradient(130deg, #0c0c0c, #1a2b3c);
+      color: #eaeaea;
+      line-height: 1.5;
     }
 
-    /* Navbar */
-    nav {
-      background-color: #000;
-      padding: 10px 20px;
+    a { text-decoration: none; }
+
+    /* NAVBAR */
+    .navBar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      background: #000;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 99;
     }
 
-    .logo {
+    .mainLogo {
       display: flex;
       align-items: center;
     }
 
-    .logo img {
-      height: 40px;
+    .mainLogo img {
+      height: 45px;
+      width: auto;
       margin-right: 10px;
     }
 
-    .logo span {
-      color: #00aaff;
-      font-size: 20px;
+    .mainLogo span {
+      font-size: 1.3rem;
       font-weight: bold;
+      color: #1e90ff;
     }
 
-    nav ul {
+    .navItems {
       list-style: none;
+      display: flex;
+      gap: 18px;
       margin: 0;
       padding: 0;
-      display: flex;
-      align-items: center;
+      flex: 1;
+      justify-content: center;
     }
 
-    nav ul li {
-      position: relative;
-      margin-left: 20px;
-    }
+    .navItems a { color: #1e90ff; font-weight: bold; padding: 6px; }
+    .navItems a:hover { color: #5ad7c0; }
 
-    nav ul li a {
-      text-decoration: none;
-      color: #00aaff;
-      font-weight: bold;
-      padding: 5px;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #fff;
-    }
-
-    .dropdown-content {
+    .dropMenu {
       display: none;
       position: absolute;
       top: 30px;
       left: 0;
       background-color: #222;
-      min-width: 150px;
-      box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
-      z-index: 1;
+      border-radius: 6px;
+      min-width: 140px;
     }
 
-    .dropdown-content a {
-      display: block;
-      padding: 10px;
-      color: #00aaff;
-      text-decoration: none;
+    .dropMenu a { display: block; padding: 8px 12px; color: #1e90ff; }
+    .dropMenu a:hover { background-color: #333; color: #5ad7c0; }
+
+    .loginButton {
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    .dropdown-content a:hover {
-      background-color: #333;
-      color: #fff;
+    .loginButton:hover { background-color: #0b6cd4; }
+
+    .burgerIcon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
     }
 
-    nav ul li:hover .dropdown-content {
-      display: block;
+    .burgerIcon div {
+      height: 3px;
+      width: 24px;
+      background-color: #1e90ff;
+      margin-bottom: 4px;
     }
 
-    /* Blog Section */
-    .blog-section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
+    /* BLOG SECTION */
+    .blogBanner {
       text-align: center;
+      padding: 60px 15px 40px;
     }
 
-    .blog-section h2 {
-      color: #00aaff;
-      margin-bottom: 40px;
+    .blogBanner h1 {
+      font-size: 2.6rem;
+      color: #1e90ff;
+      margin-bottom: 15px;
     }
 
-    .card-container {
+    .blogBanner p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      font-size: 1.1rem;
+    }
+
+    .blogPosts {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 15px;
       display: flex;
-      gap: 30px;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 25px;
     }
 
-    .card {
-      background: #1a1a1a;
-      border: 1px solid #00aaff;
-      border-radius: 10px;
+    .postCard {
+      background-color: rgba(255,255,255,0.05);
       padding: 20px;
-      width: 300px;
-      text-align: left;
-      box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
-      transition: transform 0.3s ease;
+      border-radius: 8px;
+      border: 1px solid #5ad7c0;
+      box-shadow: 0 0 10px rgba(90, 215, 192, 0.15);
+      transition: transform 0.2s ease;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+    .postCard:hover { transform: translateY(-3px); }
 
-    .card img {
-      width: 100%;
-      border-radius: 5px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      color: #00aaff;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 1rem;
-      line-height: 1.5;
-      margin-bottom: 15px;
-    }
-
-    .card a {
-      color: #00aaff;
-      text-decoration: none;
+    .postCard h3 { color: #1e90ff; margin-bottom: 10px; }
+    .postCard p { font-size: 1rem; line-height: 1.5; margin-bottom: 10px; }
+    .postCard a {
+      color: #0b6cd4;
       font-weight: bold;
     }
+    .postCard a:hover { color: #5ad7c0; }
 
-    .card a:hover {
-      color: #fff;
-    }
-
-    /* Footer */
+    /* FOOTER */
     footer {
-      background: #000;
+      background-color: #000;
+      padding: 15px;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
     }
 
-    footer p {
-      margin: 5px 0;
+    footer p { font-size: 14px; margin: 5px 0; }
+
+    .socialLinks a {
+      margin: 0 8px;
+      color: #1e90ff;
     }
 
-    .socials a {
-      margin: 0 10px;
-      color: #00aaff;
-      text-decoration: none;
-    }
+    .socialLinks a:hover { color: #5ad7c0; }
 
-    .socials a:hover {
-      color: #fff;
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .navItems {
+        flex-direction: column;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        background-color: #111;
+        display: none;
+      }
+
+      .navItems.show { display: flex; }
+      .burgerIcon { display: flex; }
+      .dropMenu { position: static; background-color: #111; }
     }
   </style>
 </head>
-<body>
 
-  <!-- Navbar -->
+<body>
+  <!-- NAVBAR -->
   <nav>
-    <div class="logo">
-      <img src="images/logo.png" alt="Circuit Press Logo">
-      <span>Circuit Press</span>
+    <div class="navBar">
+      <div class="mainLogo">
+        <img src="images/logo.png" alt="Circuit Press Logo">
+        <span>Circuit Press</span>
+      </div>
+
+      <ul class="navItems">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="#">More ▾</a>
+          <div class="dropMenu">
+            <a href="contact.html">Contact</a>
+            <a href="resources.html">Resources</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+        </li>
+      </ul>
+
+      <button class="loginButton" onclick="window.location.href='login.html'">Login</button>
+
+      <div class="burgerIcon">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="about.html">About</a></li>
-      <li>
-        <a href="#">More ▾</a>
-        <div class="dropdown-content">
-          <a href="contact.html">Contact</a>
-          <a href="resources.html">Resources</a>
-          <a href="faq.html">FAQ</a>
-        </div>
-      </li>
-    </ul>
   </nav>
 
-  <!-- Blog Section -->
-  <section class="blog-section">
-    <h2>Latest Articles</h2>
-    <div class="card-container">
-      <div class="card">
-        <img src="images/article1.jpg" alt="AI in 2025">
-        <h3>AI in 2025</h3>
-        <p>Exploring the latest breakthroughs in artificial intelligence and how they shape our future.</p>
-        <a href="article-ai.html">Read More</a>
-      </div>
-      <div class="card">
-        <img src="images/article2.jpg" alt="Cybersecurity Trends">
-        <h3>Cybersecurity Trends</h3>
-        <p>Discover how digital threats are evolving and what you can do to stay protected online.</p>
-        <a href="article-cybersecurity.html">Read More</a>
-      </div>
-      <div class="card">
-        <img src="images/article3.jpg" alt="Tech for Students">
-        <h3>Tech for Students</h3>
-        <p>Top tools and platforms every tech student should know to boost productivity and learning.</p>
-        <a href="article-students.html">Read More</a>
-      </div>
+  <!-- BLOG BANNER -->
+  <section class="blogBanner">
+    <h1>Student Tech Blog</h1>
+    <p>Read our tutorials, experiments, and notes on coding and cybersecurity. Everything is written by students, for students.</p>
+  </section>
+
+  <!-- BLOG POSTS -->
+  <section class="blogPosts">
+    <div class="postCard">
+      <h3>Intro to HTML & CSS</h3>
+      <p>We learned how to make simple pages using HTML tags and CSS styling. Here's what worked for us and tips we found useful.</p>
+      <a href="#">Read More →</a>
+    </div>
+
+    <div class="postCard">
+      <h3>Basic Cybersecurity Tips</h3>
+      <p>Notes from our first-year cybersecurity class: password safety, phishing awareness, and keeping your devices secure.</p>
+      <a href="#">Read More →</a>
+    </div>
+
+    <div class="postCard">
+      <h3>Fun JavaScript Experiments</h3>
+      <p>We tried some interactive scripts like dropdowns, simple games, and review forms. Here's what we learned from trial and error.</p>
+      <a href="#">Read More →</a>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Circuit Press | All Rights Reserved</p>
-    <div class="socials">
+    <p>&copy; 2025 Circuit Press | Made by Students</p>
+    <div class="socialLinks">
       <a href="#">GitHub</a>
       <a href="#">Twitter</a>
       <a href="#">LinkedIn</a>
     </div>
   </footer>
 
+  <script>
+    // Burger menu toggle
+    const burger = document.querySelector('.burgerIcon');
+    const nav = document.querySelector('.navItems');
+    burger.addEventListener('click', () => nav.classList.toggle('show'));
+  </script>
 </body>
 </html>
+
 
