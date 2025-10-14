@@ -4,42 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Circuit Press | Home</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <style>
-    /* 
-      Author:Salah Al Din Sharif
-      Course: Web Dev / Cybersecurity Year 1
-      Notes: Built from scratch, trying to learn basic responsive layout :)
-    */
+    /* CSS Variables for Dark/Light Mode */
+    :root {
+      --bg-color: #102030;
+      --text-color: #eaeaea;
+      --primary-color: #1e90ff;
+      --secondary-color: #5ad7c0;
+      --card-bg: #111827;
+      --card-border: #5ad7c0;
+      --banner-bg: linear-gradient(135deg, #0b0b0b, #102030);
+    }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0b0b0b, #102030);
-      color: #eaeaea;
+      background: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.5;
     }
 
     a {
       text-decoration: none;
+      color: var(--primary-color);
     }
 
-    /* NAVBAR */
+    a:hover {
+      color: var(--secondary-color);
+    }
+
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 15px;
-      background: #000;
+      background: var(--bg-color);
       position: sticky;
       top: 0;
       z-index: 10;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
     }
 
     .logo img {
@@ -49,12 +53,11 @@
     }
 
     .logo span {
-      color: #1e90ff;
+      color: var(--primary-color);
       font-weight: bold;
       font-size: 1.3rem;
     }
 
-    /* NAV LINKS */
     .nav-links {
       display: flex;
       list-style: none;
@@ -65,17 +68,10 @@
       flex: 1;
     }
 
-    .nav-links a {
-      color: #1e90ff;
-      font-weight: bold;
-      padding: 5px;
-    }
-
     .nav-links a:hover {
-      color: #5ad7c0;
+      color: var(--secondary-color);
     }
 
-    /* DROPDOWN MENU */
     .dropdown {
       display: none;
       position: absolute;
@@ -89,17 +85,16 @@
     .dropdown a {
       display: block;
       padding: 8px 12px;
-      color: #1e90ff;
+      color: var(--primary-color);
     }
 
     .dropdown a:hover {
       background: #333;
-      color: #5ad7c0;
+      color: var(--secondary-color);
     }
 
-    /* LOGIN BUTTON */
     .login-btn {
-      background: #1e90ff;
+      background: var(--primary-color);
       color: white;
       border: none;
       padding: 8px 16px;
@@ -109,10 +104,9 @@
     }
 
     .login-btn:hover {
-      background: #0b6cd4;
+      background: var(--secondary-color);
     }
 
-    /* BURGER MENU */
     .menu-btn {
       display: none;
       flex-direction: column;
@@ -122,26 +116,20 @@
     .menu-btn div {
       height: 3px;
       width: 24px;
-      background: #1e90ff;
+      background: var(--primary-color);
       margin-bottom: 3px;
     }
 
-    /* BANNER */
     .banner {
       text-align: center;
       padding: 70px 15px 50px;
+      background: var(--banner-bg);
     }
 
     .banner h1 {
       font-size: 2.6rem;
-      color: #1e90ff;
+      color: var(--primary-color);
       margin-bottom: 15px;
-    }
-
-    .banner p {
-      max-width: 700px;
-      margin: 0 auto 20px;
-      font-size: 1.1rem;
     }
 
     .banner a {
@@ -154,10 +142,9 @@
     }
 
     .banner a:hover {
-      background: #5ad7c0;
+      background: var(--secondary-color);
     }
 
-    /* TOPICS SECTION */
     .topics {
       display: flex;
       flex-wrap: wrap;
@@ -173,21 +160,16 @@
       margin: 12px;
       padding: 20px;
       border-radius: 8px;
-      border: 1px solid #5ad7c0;
+      border: 1px solid var(--card-border);
       box-shadow: 0 0 10px rgba(90, 215, 192, 0.15);
       transition: transform 0.2s;
     }
 
-    .topic:hover {
-      transform: translateY(-3px);
-    }
-
     .topic h3 {
-      color: #1e90ff;
+      color: var(--primary-color);
       margin-bottom: 8px;
     }
 
-    /* REVIEWS SECTION */
     .reviews {
       text-align: center;
       background: rgba(255, 255, 255, 0.05);
@@ -195,15 +177,15 @@
     }
 
     .reviews h2 {
-      color: #1e90ff;
+      color: var(--primary-color);
       margin-bottom: 15px;
     }
 
     .review-card {
-      background: #111827;
+      background: var(--card-bg);
       padding: 18px;
       border-radius: 8px;
-      border: 1px solid #5ad7c0;
+      border: 1px solid var(--card-border);
       max-width: 400px;
       margin: auto;
       text-align: left;
@@ -226,10 +208,9 @@
     }
 
     .add-review:hover {
-      background: #5ad7c0;
+      background: var(--secondary-color);
     }
 
-    /* FOOTER */
     footer {
       background: #000;
       padding: 15px;
@@ -243,19 +224,18 @@
 
     .socials a {
       margin: 0 8px;
-      color: #1e90ff;
+      color: var(--primary-color);
     }
 
     .socials a:hover {
-      color: #5ad7c0;
+      color: var(--secondary-color);
     }
 
-    /* SCROLL BUTTON */
     #topBtn {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #1e90ff;
+      background: var(--primary-color);
       color: white;
       border: none;
       border-radius: 50%;
@@ -264,7 +244,6 @@
       display: none;
     }
 
-    /* MOBILE VIEW */
     @media (max-width: 768px) {
       .nav-links {
         flex-direction: column;
@@ -315,7 +294,10 @@
         </li>
       </ul>
 
-      <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+      <div>
+        <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+        <button id="themeToggle" class="login-btn">Dark/Light</button>
+      </div>
 
       <div class="menu-btn">
         <div></div>
@@ -348,7 +330,7 @@
     </div>
   </section>
 
-  <!-- REVIEWS (Carousel Added) -->
+  <!-- REVIEWS (Carousel) -->
   <section class="reviews">
     <h2>Student Comments</h2>
     <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -378,42 +360,24 @@
   <button id="topBtn">↑</button>
 
   <script>
-    // menu toggle for mobile
+    // Menu toggle
     const menuBtn = document.querySelector('.menu-btn');
     const navLinks = document.querySelector('.nav-links');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('show'));
 
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-
-    // dropdown hover effect
+    // Dropdown hover
     const listItems = document.querySelectorAll('.nav-links li');
     listItems.forEach(li => {
-      li.addEventListener('mouseenter', () => {
-        const dd = li.querySelector('.dropdown');
-        if (dd) dd.style.display = 'block';
-      });
-      li.addEventListener('mouseleave', () => {
-        const dd = li.querySelector('.dropdown');
-        if (dd) dd.style.display = 'none';
-      });
+      li.addEventListener('mouseenter', () => { const dd = li.querySelector('.dropdown'); if (dd) dd.style.display = 'block'; });
+      li.addEventListener('mouseleave', () => { const dd = li.querySelector('.dropdown'); if (dd) dd.style.display = 'none'; });
     });
 
-    // scroll-to-top button
+    // Scroll-to-top button
     const topBtn = document.getElementById('topBtn');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        topBtn.style.display = 'block';
-      } else {
-        topBtn.style.display = 'none';
-      }
-    });
+    window.addEventListener('scroll', () => topBtn.style.display = (window.scrollY > 300 ? 'block' : 'none'));
+    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    topBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // simple "reviews" (comments)
+    // Reviews
     const reviews = [
       { text: "Cool site! Helped me understand basic network stuff.", author: "Alex (Year 1)" },
       { text: "The tutorials are short and not full of jargon — nice.", author: "Maya (Freshman)" },
@@ -424,20 +388,16 @@
 
     function renderReviews() {
       carouselInner.innerHTML = "";
-      reviews.forEach((r, index) => {
+      reviews.forEach((r, i) => {
         const div = document.createElement('div');
-        div.className = 'carousel-item' + (index === 0 ? ' active' : '');
-        div.innerHTML = `
-          <div class="review-card mx-auto">
-            <p>"${r.text}" — ${r.author}</p>
-          </div>`;
+        div.className = 'carousel-item' + (i === 0 ? ' active' : '');
+        div.innerHTML = `<div class="review-card mx-auto"><p>"${r.text}" — ${r.author}</p></div>`;
         carouselInner.appendChild(div);
       });
     }
 
     renderReviews();
 
-    // add new comment
     document.getElementById('addReviewBtn').addEventListener('click', () => {
       const text = prompt("Enter your comment:");
       if (text && text.trim() !== "") {
@@ -445,16 +405,34 @@
         renderReviews();
       }
     });
+
+    // Dark/Light Mode
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      const root = document.documentElement;
+      if (getComputedStyle(root).getPropertyValue('--bg-color').trim() === '#102030') {
+        // Light mode
+        root.style.setProperty('--bg-color', '#f5f5f5');
+        root.style.setProperty('--text-color', '#111827');
+        root.style.setProperty('--primary-color', '#0b6cd4');
+        root.style.setProperty('--secondary-color', '#1e90ff');
+        root.style.setProperty('--card-bg', '#ffffff');
+        root.style.setProperty('--card-border', '#0b6cd4');
+        root.style.setProperty('--banner-bg', 'linear-gradient(135deg, #f0f0f0, #d0d0d0)');
+      } else {
+        // Dark mode
+        root.style.setProperty('--bg-color', '#102030');
+        root.style.setProperty('--text-color', '#eaeaea');
+        root.style.setProperty('--primary-color', '#1e90ff');
+        root.style.setProperty('--secondary-color', '#5ad7c0');
+        root.style.setProperty('--card-bg', '#111827');
+        root.style.setProperty('--card-border', '#5ad7c0');
+        root.style.setProperty('--banner-bg', 'linear-gradient(135deg, #0b0b0b, #102030)');
+      }
+    });
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 
