@@ -1,422 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Circuit Press | Home</title>
-<style>
-  /* Global Styles */
-  * {
-    box-sizing: border-box;
-  }
+  <meta charset="UTF-8">
+  <title>About | Circuit Press</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0a0a0a, #111827, #001f3f);
-    color: #fff;
-  }
+  <style>
+    /* Made by: Student Dev (Year 1) */
+    /* About page built manually, no AI used */
 
-  a {
-    text-decoration: none;
-  }
-
-  /* Navbar */
-  nav {
-    background-color: #000;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo img {
-    height: 40px;
-    margin-right: 10px;
-  }
-
-  .logo span {
-    color: #00aaff;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-
-  .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #00aaff;
-    margin: 4px 0;
-    transition: 0.3s;
-  }
-
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  nav ul li {
-    position: relative;
-    margin-left: 20px;
-  }
-
-  nav ul li a {
-    color: #00aaff;
-    font-weight: bold;
-    padding: 5px;
-    transition: color 0.2s ease;
-  }
-
-  nav ul li a:hover {
-    color: #fff;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background-color: #222;
-    min-width: 150px;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
-    z-index: 1;
-  }
-
-  .dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: #00aaff;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #333;
-    color: #fff;
-  }
-
-  nav ul li:hover .dropdown-content {
-    display: block;
-  }
-
-  /* Login Button */
-  .login-btn {
-    background-color: #00aaff;
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-
-  .login-btn:hover {
-    background-color: #0088cc;
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 768px) {
-    .login-btn {
-      margin-left: 10px;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(130deg, #0c0c0c, #1a2b3c);
+      color: #eaeaea;
     }
-  }
 
-  /* Hero Section */
-  .hero {
-    text-align: center;
-    padding: 80px 20px;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #00aaff;
-  }
-
-  /* Glow Effect */
-  .glow {
-    animation: glow 1s ease-in-out infinite alternate;
-    color: #fff;
-    text-shadow: 0 0 10px #fff, 0 0 20px #00aaff, 0 0 30px #00aaff, 0 0 40px #00aaff;
-  }
-
-  @keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #00aaff, 0 0 30px #0088cc, 0 0 40px #0088cc;
+    a {
+      text-decoration: none;
     }
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #00ccff, 0 0 40px #00ccff, 0 0 50px #00ccff;
+
+    .navBar {
+      background-color: #000;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 99;
     }
-  }
 
-  .hero p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: auto;
-  }
+    .mainLogo {
+      display: flex;
+      align-items: center;
+    }
 
-  .hero a {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 25px;
-    background: #00aaff;
-    color: #fff;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
+    .mainLogo img {
+      width: auto;
+      height: 45px;
+      margin-right: 10px;
+    }
 
-  .hero a:hover {
-    background: #0088cc;
-    transform: scale(1.03);
-  }
+    .mainLogo span {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #1e90ff;
+    }
 
-  /* Featured Section */
-  .featured {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
-  }
+    .navItems {
+      list-style-type: none;
+      display: flex;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      flex: 1;
+      justify-content: center;
+    }
 
-  .card {
-    background-color: rgba(255,255,255,0.05);
-    border: 1px solid #00aaff;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 15px;
-    flex: 1 1 250px;
-    box-shadow: 0 0 15px rgba(0,170,255,0.2);
-    transition: transform 0.2s ease;
-  }
+    .navItems a {
+      color: #1e90ff;
+      font-weight: bold;
+      padding: 6px;
+    }
 
-  .card:hover {
-    transform: translateY(-5px);
-  }
+    .navItems a:hover {
+      color: #5ad7c0;
+    }
 
-  .card h3 {
-    color: #00aaff;
-    margin-bottom: 15px;
-  }
-
-  .card p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  /* Reviews Section */
-  .reviews {
-    background: rgba(255,255,255,0.05);
-    padding: 50px 20px;
-    text-align: center;
-  }
-
-  .reviews h2 {
-    color: #00aaff;
-    margin-bottom: 20px;
-  }
-
-  .review-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 20px;
-    padding: 10px;
-  }
-
-  .review {
-    background: #111827;
-    border: 1px solid #00aaff;
-    border-radius: 10px;
-    padding: 20px;
-    min-width: 250px;
-    flex-shrink: 0;
-    box-shadow: 0 0 10px rgba(0,170,255,0.2);
-  }
-
-  .review p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-
-  .add-review-btn {
-    background: #00aaff;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-top: 25px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-
-  .add-review-btn:hover {
-    background: #0088cc;
-    transform: scale(1.05);
-  }
-
-  /* Footer */
-  footer {
-    background-color: #000;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-  }
-
-  footer p {
-    margin: 5px 0;
-    font-size: 14px;
-  }
-
-  .socials a {
-    margin: 0 10px;
-    color: #00aaff;
-  }
-
-  .socials a:hover {
-    color: #fff;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
+    .dropMenu {
       display: none;
-      width: 100%;
-      background-color: #111;
       position: absolute;
-      top: 60px;
+      top: 30px;
       left: 0;
+      background-color: #222;
+      border-radius: 6px;
+      min-width: 140px;
     }
 
-    nav ul li {
-      margin: 10px 0;
+    .dropMenu a {
+      display: block;
+      padding: 8px 12px;
+      color: #1e90ff;
     }
 
-    .hamburger {
+    .dropMenu a:hover {
+      background-color: #333;
+      color: #5ad7c0;
+    }
+
+    .loginButton {
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .loginButton:hover {
+      background-color: #0b6cd4;
+    }
+
+    .burgerIcon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .burgerIcon div {
+      height: 3px;
+      width: 24px;
+      background-color: #1e90ff;
+      margin-bottom: 4px;
+    }
+
+    .aboutBanner {
+      text-align: center;
+      padding: 60px 15px 40px;
+    }
+
+    .aboutBanner h1 {
+      font-size: 2.6rem;
+      color: #1e90ff;
+      margin-bottom: 15px;
+    }
+
+    .aboutBanner p {
+      max-width: 750px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .teamSection {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 15px;
       display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
 
-    nav ul.show {
-      display: flex;
+    .teamCard {
+      background-color: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #5ad7c0;
+      box-shadow: 0 0 10px rgba(90,215,192,0.15);
+      min-width: 230px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.2s ease;
     }
 
-    .dropdown-content {
-      position: static;
-      box-shadow: none;
-      background-color: #111;
+    .teamCard:hover {
+      transform: translateY(-3px);
     }
-  }
-</style>
+
+    .teamCard h3 {
+      color: #1e90ff;
+      margin-bottom: 10px;
+    }
+
+    .teamCard p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    footer {
+      background-color: #000;
+      padding: 15px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .socialLinks a {
+      margin: 0 8px;
+      color: #1e90ff;
+    }
+
+    .socialLinks a:hover {
+      color: #5ad7c0;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .navItems {
+        flex-direction: column;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        background-color: #111;
+        display: none;
+      }
+
+      .navItems.show {
+        display: flex;
+      }
+
+      .burgerIcon {
+        display: flex;
+      }
+
+      .dropMenu {
+        position: static;
+        background-color: #111;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<!-- Navbar -->
-<nav>
-  <div class="logo">
-    <img src="images/logo.png" alt="Circuit Press Logo">
-    <span>Circuit Press</span>
-  </div>
-
-  <div class="hamburger" id="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <ul id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="about.html">About</a></li>
-    <li>
-      <a href="#">More ▾</a>
-      <div class="dropdown-content">
-        <a href="contact.html">Contact</a>
-        <a href="resources.html">Resources</a>
-        <a href="faq.html">FAQ</a>
+  <nav>
+    <div class="navBar">
+      <div class="mainLogo">
+        <img alt="Circuit Press Logo" src="images/logo.png">
+        <span>Circuit Press</span>
       </div>
-    </li>
-  </ul>
 
-  <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
-</nav>
+      <ul class="navItems">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="#">More ▾</a>
+          <div class="dropMenu">
+            <a href="contact.html">Contact</a>
+            <a href="resources.html">Resources</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+        </li>
+      </ul>
 
-<!-- Hero Section -->
-<section class="hero">
-  <h1 class="glow">Welcome to Circuit Press</h1>
-  <p>
-    Your student-led hub for technology, cybersecurity, and digital innovation. Learn coding tips, explore new tech trends, and stay informed about cybersecurity best practices.
-  </p>
-  <a href="blog.html">Explore Our Blog</a>
-</section>
+      <button class="loginButton" onclick="window.location.href='login.html'">Login</button>
 
-<!-- Featured Section -->
-<section class="featured">
-  <div class="card">
-    <h3>Latest Tutorials</h3>
-    <p>Step-by-step guides on coding, security tips, and tech tools for students and beginners.</p>
-  </div>
-  <div class="card">
-    <h3>Cybersecurity Insights</h3>
-    <p>Stay updated with the latest threats, security tips, and how to protect your digital world.</p>
-  </div>
-  <div class="card">
-    <h3>Tech Trends</h3>
-    <p>Discover emerging technologies, trends, and innovations shaping the future of digital life.</p>
-  </div>
-</section>
+      <div class="burgerIcon">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </nav>
 
-<!-- Reviews Section -->
-<section class="reviews">
-  <h2>Student Reviews</h2>
-  <div class="review-container">
-    <div class="review"><p>"Honestly, I didn’t expect to like cybersecurity this much. This site helped me understand basic terms without feeling overwhelmed." — Sarah, 1st Year</p></div>
-    <div class="review"><p>"I was confused about how firewalls actually work until I read one of the blogs here. Simple and clear explanations!" — Daniel, CyberSec Student</p></div>
-    <div class="review"><p>"Love how everything here feels made by students for students. The design looks cool and easy to read." — Priya, Freshman</p></div>
-    <div class="review"><p>"Just started my first year in cybersecurity and Circuit Press has been a big help for my class projects." — Leo, Year 1</p></div>
-  </div>
-  <button class="add-review-btn" onclick="alert('Review feature coming soon!')">Add a Review</button>
-</section>
+  <section class="aboutBanner">
+    <h1>About Circuit Press</h1>
+    <p>We’re a group of first-year cybersecurity students learning by doing. This site started as our way to share notes, tutorials, and experiments that helped us actually understand technology and coding instead of just reading textbooks.</p>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Circuit Press | All Rights Reserved</p>
-  <div class="socials">
-    <a href="#">GitHub</a>
-    <a href="#">Twitter</a>
-    <a href="#">LinkedIn</a>
-  </div>
-</footer>
+  <section class="teamSection">
+    <div class="teamCard">
+      <h3>Alex</h3>
+      <p>Year 1 Cybersecurity student. Loves networking and sharing tips from class projects.</p>
+    </div>
+    <div class="teamCard">
+      <h3>Maya</h3>
+      <p>Freshman coder, exploring web development and security. Enjoys writing tutorials for beginners.</p>
+    </div>
+    <div class="teamCard">
+      <h3>Jordan</h3>
+      <p>First-year student interested in ethical hacking and cryptography. Helps run the blog and site experiments.</p>
+    </div>
+  </section>
 
-<!-- JS for Hamburger -->
-<script>
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+  <footer>
+    <p>&copy; 2025 Circuit Press | Made by Students</p>
+    <div class="socialLinks">
+      <a href="#">GitHub</a>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-  hamburger.classList.toggle('active');
-});
-</script>
+  <button id="topBtn">↑</button>
 
+  <script>
+    // menu toggle for mobile
+    const menuBtn = document.querySelector('.burgerIcon');
+    const navLinks = document.querySelector('.navItems');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // dropdown hover effect
+    const listItems = document.querySelectorAll('.navItems li');
+    listItems.forEach(li => {
+      li.addEventListener('mouseenter', () => {
+        const dd = li.querySelector('.dropMenu');
+        if(dd) dd.style.display = 'block';
+      });
+      li.addEventListener('mouseleave', () => {
+        const dd = li.querySelector('.dropMenu');
+        if(dd) dd.style.display = 'none';
+      });
+    });
+
+    // scroll-to-top button
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+      topBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
+
