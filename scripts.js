@@ -25,7 +25,7 @@ topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smoo
 
 // Reviews
 const reviews = [
-  { text: "Cool site! Helped me understand basic network stuff.", author: "Alex (Year 1)" },
+  { text: "Circuit Press makes keeping up with tech easy and interesting, giving readers the stories and insights they actually care about.", author: "Alex" },
   { text: "The tutorials are short — nice.", author: "Maya (Freshman)" },
   { text: "Used one of the coding posts for my assignment, thanks!", author: "Jordan" }
 ];

@@ -1,6 +1,4 @@
-/* ============================================================
-   GLOBAL THEME VARIABLES
-   ============================================================ */
+/* CSS Variables for Dark/Light Mode */
 :root {
   --bg-color: #102030;
   --text-color: #eaeaea;
@@ -11,9 +9,6 @@
   --banner-bg: linear-gradient(135deg, #0b0b0b, #102030);
 }
 
-/* ============================================================
-   GLOBAL STYLES
-   ============================================================ */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -31,9 +26,6 @@ a:hover {
   color: var(--secondary-color);
 }
 
-/* ============================================================
-   NAVIGATION BAR
-   ============================================================ */
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -42,7 +34,7 @@ a:hover {
   background: var(--bg-color);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .logo img {
@@ -67,26 +59,18 @@ a:hover {
   flex: 1;
 }
 
-.nav-links li {
-  position: relative; /* enables absolute dropdown positioning */
-}
-
 .nav-links a:hover {
   color: var(--secondary-color);
 }
 
-/* ============================================================
-   DROPDOWN MENU
-   ============================================================ */
 .dropdown {
   display: none;
   position: absolute;
-  top: 100%; /* appears directly beneath parent item */
+  top: 30px;
   left: 0;
   background: #222;
   border-radius: 6px;
   min-width: 140px;
-  z-index: 2000; /* ensures dropdown overlays content */
 }
 
 .dropdown a {
@@ -100,14 +84,6 @@ a:hover {
   color: var(--secondary-color);
 }
 
-/* Reveal dropdown on hover */
-.nav-links li:hover .dropdown {
-  display: block;
-}
-
-/* ============================================================
-   BUTTONS
-   ============================================================ */
 .login-btn {
   background: var(--primary-color);
   color: white;
@@ -116,14 +92,12 @@ a:hover {
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
 .login-btn:hover {
   background: var(--secondary-color);
 }
 
-/* Hamburger Menu (for mobile) */
 .menu-btn {
   display: none;
   flex-direction: column;
@@ -137,9 +111,6 @@ a:hover {
   margin-bottom: 3px;
 }
 
-/* ============================================================
-   BANNER SECTION
-   ============================================================ */
 .banner {
   text-align: center;
   padding: 70px 15px 50px;
@@ -165,9 +136,6 @@ a:hover {
   background: var(--secondary-color);
 }
 
-/* ============================================================
-   TOPICS SECTION
-   ============================================================ */
 .topics {
   display: flex;
   flex-wrap: wrap;
@@ -188,18 +156,11 @@ a:hover {
   transition: transform 0.2s;
 }
 
-.topic:hover {
-  transform: translateY(-4px);
-}
-
 .topic h3 {
   color: var(--primary-color);
   margin-bottom: 8px;
 }
 
-/* ============================================================
-   REVIEWS SECTION
-   ============================================================ */
 .reviews {
   text-align: center;
   background: rgba(255, 255, 255, 0.05);
@@ -241,9 +202,6 @@ a:hover {
   background: var(--secondary-color);
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 footer {
   background: #000;
   padding: 15px;
@@ -264,9 +222,6 @@ footer p {
   color: var(--secondary-color);
 }
 
-/* ============================================================
-   SCROLL-TO-TOP BUTTON
-   ============================================================ */
 #topBtn {
   position: fixed;
   bottom: 20px;
@@ -280,9 +235,6 @@ footer p {
   display: none;
 }
 
-/* ============================================================
-   RESPONSIVE (MOBILE) STYLES
-   ============================================================ */
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
