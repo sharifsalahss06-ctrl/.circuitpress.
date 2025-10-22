@@ -1,4 +1,4 @@
-:root {
+:root { 
   --bg-color: #102030;
   --text-color: #eaeaea;
   --primary-color: #1e90ff;
@@ -63,6 +63,13 @@ a:hover {
   color: var(--secondary-color);
 }
 
+/* ----------------------------- */
+/* FIXED DROPDOWN SECTION        */
+/* ----------------------------- */
+.nav-links li {
+  position: relative;
+}
+
 .dropdown {
   display: none;
   position: absolute;
@@ -71,6 +78,13 @@ a:hover {
   background: #222;
   border-radius: 6px;
   min-width: 140px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.nav-links li:hover .dropdown {
+  display: block;
 }
 
 .dropdown a {
@@ -200,5 +214,14 @@ footer p { font-size: 14px; margin: 5px 0; }
   .dropdown {
     position: static;
     background: #111;
+    box-shadow: none;
+  }
+
+  .nav-links li:hover .dropdown {
+    display: none; /* disable hover on mobile */
+  }
+
+  .dropdown.show {
+    display: block;
   }
 }
